@@ -153,17 +153,55 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-
             </div>
-
         </div>
+    </section>
 
+
+    <!-- star about section -->
+
+    <section class="p-5" id="about">
+        <div class="container py-5">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md">
+                    <a href="#">
+                        <img class="img-fluid" src="img/Imagen1.jpg">
+                    </a>
+                </div>
+                <div class="col-md p-5">
+                    <h2>Learn The basics</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Quisquam obcaecati perspiciatis odio quia fuga,
+                        voluptatibus adipisci accusamus facere nobis
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Quisquam obcaecati perspiciatis odio quia fuga,
+                        voluptatibus adipisci accusamus facere nobis
+                    </p>
+                    <a href="" class="btn btn-primary mt-3">
+                        <i class="bi bi-chevron-right"></i>
+                        Read More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end about section -->
+
+    <!-- star learn section -->
+
+    <section class="bg-dark text-light p-5" id="learn">
+        <div class="container py-5">
+            <div class="row align-items-center justify-content-between"></div>
+        </div>
 
     </section>
 
 
 
-
+    <!-- end learn section -->
 </body>
 
 </html>
