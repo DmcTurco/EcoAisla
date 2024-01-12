@@ -194,14 +194,246 @@
 
     <section class="bg-dark text-light p-5" id="learn">
         <div class="container py-5">
-            <div class="row align-items-center justify-content-between"></div>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md p-5">
+                    <h2>Learn The React</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Quisquam obcaecati perspiciatis odio quia fuga,
+                        voluptatibus adipisci accusamus facere nobis
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Quisquam obcaecati perspiciatis odio quia fuga,
+                        voluptatibus adipisci accusamus facere nobis
+                    </p>
+                    <a href="" class="btn btn-light mt-3">
+                        <i class="bi bi-chevron-right"></i>
+                        Read More
+                    </a>
+                </div>
+                <div class="col-md">
+                    <a href="#">
+                        <img class="img-fluid" src="img/Imagen1.jpg">
+                    </a>
+                </div>
+
+            </div>
         </div>
 
     </section>
-
-
-
     <!-- end learn section -->
+
+    <!-- start F&Q section -->
+    <section class="p-5" id="questions">
+        <div class="container py-5"></div>
+        <h2 class="text-center mb-4">Frequent Asked Questions</h2>
+
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Accordion Item #1
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Accordion Item #2
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- end F&Q section -->
+
+    <!-- star instraction section -->
+
+    <section class="p-5 bg-primary">
+        <div class="container py-5">
+            <h2 class="text-center text-white">Our Instruction</h2>
+            <p class="lead text-center text-white mb-5">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem,
+                eveniet minus cupiditate quidem nulla ratione unde? Harum nostrum suscipit,
+                possimus nemo ipsum quas doloribus similique voluptatibus aliquam quos iure
+                ex.
+            </p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center p-5">
+                            <img src="" class="rounded-circle mb-3">
+                            <h3 class="card-title mb-3">John Doe</h3>
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Temporibus, neque.
+                            </p>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1 lead"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center p-5">
+                            <img src="" class="rounded-circle mb-3">
+                            <h3 class="card-title mb-3">John Doe</h3>
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Temporibus, neque.
+                            </p>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1 lead"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center p-5">
+                            <img src="" class="rounded-circle mb-3">
+                            <h3 class="card-title mb-3">John Doe</h3>
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Temporibus, neque.
+                            </p>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1 lead"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center p-5">
+                            <img src="" class="rounded-circle mb-3">
+                            <h3 class="card-title mb-3">John Doe</h3>
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Temporibus, neque.
+                            </p>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1 lead"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- end instraction section -->
+
+
+    <!-- star footer section -->
+
+    <footer id="contact" class="page-footer p-5 text-md-left">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase font-weight-bold mb-4">
+                        Wp$ShopM@rt
+                    </h5>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Beatae, fugit.
+                        Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Beatae, fugit.
+                        Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Beatae, fugit.
+                    </p>
+                    <a href="#"><i class="bi bi-facebook text-dark mx-1 lead"></i></a>
+                    <a href="#"><i class="bi bi-twitter text-dark mx-1 lead"></i></a>
+                    <a href="#"><i class="bi bi-linkedin text-dark mx-1 lead"></i></a>
+                    <a href="#"><i class="bi bi-instagram text-dark mx-1 lead"></i></a>
+                </div>
+
+                <div class="col-lg-2 col-md-2 mx-auto">
+                    <h5 class="text-uppercase font-weight-bold mb-4">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a href="#">Servicio 1</a></li>
+                        <li class="mb-1"><a href="#">Servicio 2</a></li>
+                        <li class="mb-1"><a href="#">Servicio 3</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-2 mx-auto">
+                    <h5 class="text-uppercase font-weight-bold mb-4">Page links</h5>
+                    <ul class="list-styled">
+                        <li class="mb-1"><a href="#">Servicio 1</a></li>
+                        <li class="mb-1"><a href="#">Servicio 2</a></li>
+                        <li class="mb-1"><a href="#">Servicio 3</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-xs-12 location">
+                    <h5 class="text-uppercase font-weight-bold mb-4">
+                        Location
+                    </h5>
+                    <p class="d-flex"><i class="bi bi-geo-alt text-primary mx-2 lead"></i>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                    <p class="d-flex  align-items-center"><i class="bi bi-phone text-primary mx-2 lead"></i>
+                       +51-980-578-452
+                    </p>
+                    <p class="d-flex  align-items-center"><i class="bi bi-envelope text-primary mx-2 lead"></i>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- end footer section -->
+
+    <!-- start footer bottom -->
+
+    <footer class="p-3 bg-dark text-white text-center position-relative">
+        <div class="container">
+            <p class="mb-0">
+                Copyright &copy; 2022 Wp$ShopM@rt
+            </p>
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle h1"></i>
+            </a>
+        </div>
+
+    </footer>
+
+
+    <!-- end footer bottom -->
+
 </body>
 
 </html>
