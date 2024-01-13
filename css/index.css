@@ -3,3 +3,46 @@ hr {
     color: green;
     opacity: 10;
 }
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #007bff;
+    /* Color del fondo para los controles */
+    border: 1px solid #007bff;
+    /* Borde del control */
+    border-radius: 5px;
+    /* Bordes redondeados */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    /* Ajusta el ancho según sea necesario */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #007bff;
+    /* Color del fondo para los controles */
+    border: 1px solid #007bff;
+    /* Borde del control */
+    border-radius: 5px;
+    /* Bordes redondeados */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    /* Ajusta el ancho según sea necesario */
+}
+
+.carousel-indicators button {
+    background-color: #007bff;
+    /* Color de fondo de los indicadores inactivos */
+}
+
+.carousel-indicators .active {
+    background-color: #0056b3;
+    /* Color de fondo del indicador activo */
+}
