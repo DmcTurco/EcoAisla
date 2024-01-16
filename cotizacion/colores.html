@@ -62,13 +62,62 @@
 
             <style>
                 .color-item {
-                    width: 5em;
-                    height: 5em;
+                    width: 8em;
+                    height: 8em;
                     border-radius: 50%;
-                    margin: 1em;
+                    margin: 0.5em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    cursor: pointer;
+                    transition: transform 0.2s ease-in-out;
+                }
+
+                .color-item.selected {
+                    border: 5px solid #1c1c1c;
+                    /* Color del borde de selección */
+                }
+
+                .color-item:hover {
+                    transform: scale(1.1);
+                }
+
+                #lienzo {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 600px;
+                    /* 2 columnas de 3 bloques */
+                    height: 300px;
+                    /* 3 filas */
+                    border: 1px solid #000;
+                    background-color: #fff;
+                    /* Color de fondo inicial */
+                }
+
+                .bloque {
+                    width: calc(50% - 4px);
+                    height: calc(33.33% - 4px);
+                    margin: 2px;
+                }
+
+                @media (max-width: 767px) {
+                    .color-item {
+                        width: 8em;
+                        /* Ajustar el ancho según sea necesario */
+                        height: 8em;
+                        /* Ajustar la altura según sea necesario */
+                    }
+
+                    #lienzo {
+                        width: 100%;
+                    }
+
+                    .bloque {
+                        width: calc(50% - 4px);
+                        /* Ajustar el ancho según sea necesario */
+                        height: calc(33.33% - 4px);
+                        margin: 2px;
+                    }
                 }
             </style>
             <div class="row">
@@ -76,46 +125,61 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-3">
-                                <div class="color-item" style="background-color: #FF5733;">1</div>
+                                <div class="color-item" style="background-color: #101316 ;"
+                                    onclick="seleccionarColor(this, '#101316 ', 'Negro')"></div>
                             </div>
                             <div class="col-md-3">
-                                <div class="color-item" style="background-color: #33FF57;">2</div>
+                                <div class="color-item" style="background-color: #689fbe;"
+                                    onclick="seleccionarColor(this, '#689fbe', 'Azul grisáceo')"></div>
                             </div>
                             <div class="col-md-3">
-                                <div class="color-item" style="background-color: #5733FF;">3</div>
+                                <div class="color-item" style="background-color: #5e60de ;"
+                                    onclick="seleccionarColor(this, '#5e60de ','Azul')"></div>
                             </div>
                             <div class="col-md-3">
-                                <div class="color-item" style="background-color: #33A1FF;">4</div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #FF33A1;">5</div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #A133FF;">6</div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #FFD933;">7</div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #33FFB8;">8</div>
+                                <div class="color-item" style="background-color: #a4a4a4 ;"
+                                    onclick="seleccionarColor(this, '#a4a4a4 ','Gris Medio')"></div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-3">
-                                <div class="color-item" style="background-color: #F933FF;">9</div>
+                                <div class="color-item" style="background-color: #31241e ;"
+                                    onclick="seleccionarColor(this, '#31241e ','Marrón oscuro o marrón chocolate.')">
+                                </div>
                             </div>
                             <div class="col-md-3">
-                                <div class="color-item" style="background-color: #33C2FF;">10</div>
+                                <div class="color-item" style="background-color: #86654b ;"
+                                    onclick="seleccionarColor(this, '#86654b ',' Marrón tostado o marrón tierra.')">
+                                </div>
                             </div>
                             <div class="col-md-3">
-                                <div class="color-item" style="background-color: #FF333A;">11</div>
+                                <div class="color-item" style="background-color: #dea15b ;"
+                                    onclick="seleccionarColor(this, '#dea15b ','Amarillo mostaza.')"></div>
                             </div>
                             <div class="col-md-3">
-                                <div class="color-item" style="background-color: #33FF84;">12</div>
+                                <div class="color-item" style="background-color: #b67a63 ;"
+                                    onclick="seleccionarColor(this, '#b67a63 ','Marrón rojizo o marrón cuero.')"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="color-item" style="background-color: #2b3414  ;"
+                                    onclick="seleccionarColor(this, '#2b3414  ','Verde oliva oscuro.')"></div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="color-item" style="background-color: #6e823d;"
+                                    onclick="seleccionarColor(this, '#6e823d','Verde oliva claro.')"></div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="color-item" style="background-color: #317060 ;"
+                                    onclick="seleccionarColor(this, '#317060 ','Verde azulado o verde petróleo.')">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="color-item" style="background-color: #bbaa55 ;"
+                                    onclick="seleccionarColor(this, '#bbaa55 ',' Amarillo pálido o beige.')"></div>
                             </div>
                         </div>
                     </div>
@@ -123,14 +187,16 @@
 
                 <div class="col-md-6">
                     <h3>Color seleccionado</h3>
-                    <div class="card">
-                        <img src="../img/Imagen1.jpg" class="card-img-top" alt="Panel acústico">
+                    <div class="card" style="border: none;">
+                        <div id="lienzo"></div>
                         <div class="card-body">
                             <h5 class="card-title">Blanco</h5>
                             <p class="card-text">Este es el color que has seleccionado.</p>
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </section>
@@ -192,6 +258,45 @@
     </footer>
 
 
+    <script>
+        var elementoSeleccionado = null;
+
+        function seleccionarColor(elemento, color, nombreColor) {
+            // Desmarcar el elemento anteriormente seleccionado
+            if (elementoSeleccionado !== null) {
+                elementoSeleccionado.classList.remove('selected');
+            }
+
+            // Marcar el nuevo elemento seleccionado
+            elemento.classList.add('selected');
+            elementoSeleccionado = elemento;
+
+            // Aplicar el color a cada bloque en el lienzo
+            var bloques = document.querySelectorAll('.bloque');
+            bloques.forEach(function (bloque) {
+                bloque.style.backgroundColor = color;
+            });
+
+            // Actualizar el nombre del color en la tarjeta
+            document.querySelector('.card-title').innerText = nombreColor;
+
+            // Actualizar el texto del párrafo
+            document.querySelector('.card-text').innerText = `Este es el color que has seleccionado: ${nombreColor}`;
+
+            // Guardar el color seleccionado en el almacenamiento local
+            localStorage.setItem('colorSeleccionado', color);
+        }
+
+        // Crear los bloques en el lienzo
+        var lienzo = document.getElementById('lienzo');
+        for (var i = 0; i < 6; i++) {
+            var bloque = document.createElement('div');
+            bloque.className = 'bloque';
+            lienzo.appendChild(bloque);
+        }
+    </script>
 
 
 </body>
+
+</html>
