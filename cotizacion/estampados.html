@@ -81,112 +81,70 @@
                 .color-item:hover {
                     transform: scale(1.1);
                 }
-
-                #lienzo {
-                    display: flex;
-                    flex-wrap: wrap;
-                    width: 600px;
-                    /* 2 columnas de 3 bloques */
-                    height: 300px;
-                    /* 3 filas */
-                    border: 1px solid #000;
-                    background-color: #fff;
-                    /* Color de fondo inicial */
-                }
-
-                .bloque {
-                    width: calc(50% - 4px);
-                    height: calc(33.33% - 4px);
-                    margin: 2px;
-                }
-
-                @media (max-width: 767px) {
-                    .color-item {
-                        width: 4em;
-                        /* Ajustar el ancho según sea necesario */
-                        height: 4em;
-                        /* Ajustar la altura según sea necesario */
-                    }
-
-                    #lienzo {
-                        width: 100%;
-                    }
-
-                    .bloque {
-                        width: calc(50% - 4px);
-                        /* Ajustar el ancho según sea necesario */
-                        height: calc(33.33% - 4px);
-                        margin: 2px;
-                    }
-                }
             </style>
             <div class="row">
+
                 <div class="col-md-6">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #101316 ;"
-                                    onclick="seleccionarColor(this, '#101316 ', 'Negro')"></div>
+                            <div class="col-md-4">
+                                <div class="color-item"
+                                    style="background-image: url('../img/cassetta.png'); border-radius: 50%;"
+                                    onclick="seleccionarImagen(this, '../img/cassetta.jpg', 'Descripción 1')">
+                                </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #689fbe;"
-                                    onclick="seleccionarColor(this, '#689fbe', 'Azul grisáceo')"></div>
+                            <div class="col-md-4">
+                                <div class="color-item" style="background-image: url('../img/grandeur.png');"
+                                    onclick="seleccionarImagen(this, '../img/cassetta.jpg', 'Descripción 1')"></div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #5e60de ;"
-                                    onclick="seleccionarColor(this, '#5e60de ','Azul')"></div>
+                            <div class="col-md-4">
+                                <div class="color-item" style="background-image: url('../img/amarillo.png');"
+                                    onclick="seleccionarImagen(this, '../img/cassetta.jpg', 'Descripción 1')">
+                                </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #a4a4a4 ;"
-                                    onclick="seleccionarColor(this, '#a4a4a4 ','Gris Medio')"></div>
-                            </div>
+
                         </div>
 
                         <div class="row">
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #31241e ;"
-                                    onclick="seleccionarColor(this, '#31241e ','Marrón oscuro o marrón chocolate.')">
+                            <div class="col-md-4">
+                                <div class="color-item" style="background-image: url('../img/monstera.png');"
+                                    onclick="seleccionarImagen(this, '../img/cassetta.jpg', 'Descripción 1')">
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #86654b ;"
-                                    onclick="seleccionarColor(this, '#86654b ',' Marrón tostado o marrón tierra.')">
+                            <div class="col-md-4">
+                                <div class="color-item" style="background-image: url('../img/palma.png');"
+                                    onclick="seleccionarImagen(this, '../img/cassetta.jpg', 'Descripción 1')">
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #dea15b ;"
-                                    onclick="seleccionarColor(this, '#dea15b ','Amarillo mostaza.')"></div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #b67a63 ;"
-                                    onclick="seleccionarColor(this, '#b67a63 ','Marrón rojizo o marrón cuero.')"></div>
-                            </div>
+                            <div class="col-md-4">
+                                <div class="color-item" style="background-image: url('../img/pantheon.png');"
+                                    onclick="seleccionarImagen(this, '../img/cassetta.jpg', 'Descripción 1')"></div>
+                            </div>  
                         </div>
 
                         <div class="row">
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #2b3414  ;"
-                                    onclick="seleccionarColor(this, '#2b3414  ','Verde oliva oscuro.')"></div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #6e823d;"
-                                    onclick="seleccionarColor(this, '#6e823d','Verde oliva claro.')"></div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #317060 ;"
-                                    onclick="seleccionarColor(this, '#317060 ','Verde azulado o verde petróleo.')">
+                            <div class="col-md-4">
+                                <div class="color-item" style="background-image: url('../img/Img1.png');"
+                                    onclick="seleccionarImagen(this, '../img/cassetta.jpg', 'Descripción 1')">
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="color-item" style="background-color: #bbaa55 ;"
-                                    onclick="seleccionarColor(this, '#bbaa55 ',' Amarillo pálido o beige.')"></div>
+                            <div class="col-md-4">
+                                <div class="color-item" style="background-image: url('../img/manoir.png');"
+                                    onclick="seleccionarImagen(this, '../img/cassetta.jpg', 'Descripción 1')">
+                                </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="color-item" style="background-image: url('../img/acustico2.png');"
+                                    onclick="seleccionarImagen(this, '../img/cassetta.jpg', 'Descripción 1')">
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6">
-                    <h3>Color seleccionado</h3>
+                    <h3>Estampado seleccionado</h3>
                     <div class="card" style="border: none;">
                         <div id="lienzo"></div>
                         <div class="card-body">
@@ -194,7 +152,7 @@
                             <p class="card-text">Este es el color que has seleccionado.</p>
                         </div>
                     </div>
-                    <a href="estampados.html" class="btn btn-dark mt-3">
+                    <a href="#" class="btn btn-dark mt-3">
                         <i class="bi bi-chevron-right"></i>
                         Siguiente
                     </a>
@@ -263,9 +221,7 @@
 
 
     <script>
-        var elementoSeleccionado = null;
-
-        function seleccionarColor(elemento, color, nombreColor) {
+        function seleccionarImagen(elemento, urlImagen, descripcion) {
             // Desmarcar el elemento anteriormente seleccionado
             if (elementoSeleccionado !== null) {
                 elementoSeleccionado.classList.remove('selected');
@@ -275,28 +231,18 @@
             elemento.classList.add('selected');
             elementoSeleccionado = elemento;
 
-            // Aplicar el color a cada bloque en el lienzo
-            var bloques = document.querySelectorAll('.bloque');
-            bloques.forEach(function (bloque) {
-                bloque.style.backgroundColor = color;
-            });
+            // Mostrar la imagen en el lienzo
+            var lienzo = document.getElementById('lienzo');
+            lienzo.style.backgroundImage = `url('${urlImagen}')`;
 
-            // Actualizar el nombre del color en la tarjeta
-            document.querySelector('.card-title').innerText = nombreColor;
+            // Actualizar el nombre de la imagen en la tarjeta
+            document.querySelector('.card-title').innerText = descripcion;
 
             // Actualizar el texto del párrafo
-            document.querySelector('.card-text').innerText = `Este es el color que has seleccionado: ${nombreColor}`;
+            document.querySelector('.card-text').innerText = `Esta es la imagen que has seleccionado: ${descripcion}`;
 
-            // Guardar el color seleccionado en el almacenamiento local
-            localStorage.setItem('colorSeleccionado', color);
-        }
-
-        // Crear los bloques en el lienzo
-        var lienzo = document.getElementById('lienzo');
-        for (var i = 0; i < 6; i++) {
-            var bloque = document.createElement('div');
-            bloque.className = 'bloque';
-            lienzo.appendChild(bloque);
+            // Guardar la URL de la imagen seleccionada en el almacenamiento local
+            localStorage.setItem('imagenSeleccionada', urlImagen);
         }
     </script>
 
