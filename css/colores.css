@@ -1,0 +1,59 @@
+.color-item {
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    margin: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.color-item.selected {
+    border: 5px solid #1c1c1c;
+    /* Color del borde de selección */
+}
+
+.color-item:hover {
+    transform: scale(1.1);
+}
+
+#lienzo {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    /* 2 columnas de 3 bloques */
+    height: 300px;
+    /* 3 filas */
+    /* border: 1px solid #000; */
+    background-color: #fff;
+    /* Color de fondo inicial */
+}
+
+.bloque {
+    width: calc(50% - 4px);
+    height: calc(33.33% - 4px);
+    margin: 2px;
+    border-radius: 20px;
+}
+
+@media (max-width: 767px) {
+    .color-item {
+        width: 4em;
+        /* Ajustar el ancho según sea necesario */
+        height: 4em;
+        /* Ajustar la altura según sea necesario */
+    }
+
+    #lienzo {
+        width: 100%;
+    }
+
+    .bloque {
+        width: calc(50% - 4px);
+        /* Ajustar el ancho según sea necesario */
+        height: calc(33.33% - 4px);
+        margin: 2px;
+    }
+}

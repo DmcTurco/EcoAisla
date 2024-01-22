@@ -10,11 +10,12 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../css/estampados.css">
-    <title>Estampados</title>
+    <link rel="stylesheet" href="../css/adicionales.css">
+    <title>Adicionales</title>
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -43,7 +44,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="adicionales.html"><span
+                        <a class="nav-link " aria-current="page" href="#"><span
                                 class="text-secondary"><strong>Adicionales</strong></span></a>
                     </li>
                     <li class="nav-item">
@@ -55,103 +56,68 @@
         </div>
     </nav>
 
-
     <section class="p-5">
         <div class="container py-5">
-            <hr size="6">
-            <h3>Personaliza tu Panel</h3>
-            <div class="row">
 
-                <div class="col-md-6">
+            <hr size="6">
+            <div class="container text-center">
+
+                <h3>Materiales</h3>
+                <p><em>En Eco Aisla utilizamos los mejores materiales de primera calidad con materiales ecológicos.<br>
+                        Tenemos el compromiso con el medio ambiente, estamos comprometidos a cuidarlo y preservarlo.<br>
+                        A continuación, encontrarás la gran variedad de productos que utilizamos para la creación de los
+                        paneles acústicos.
+                    </em>
+                </p>
+                <hr size="6">
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="color-item"
-                                    style="background-image: url('../img/cassetta.png'); background-size: cover; width: 8rem; height: 8rem;"
-                                    onclick="seleccionarImagen(this, '../img/cassetta.jpeg', 'cassetta')">
+                            <div class="col-md-3">
+                                <div class="color-item" style="background-image: url('../img/Cañamo.png'); "
+                                    onclick="seleccionarMaterial(this, 'Cañamo')">
+                                    <h1 class="titulo">Cañamo</h1>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="color-item"
-                                    style="background-image: url('../img/grandeur.png');background-size: cover; width: 8rem; height: 8rem;"
-                                    onclick="seleccionarImagen(this, '../img/grandeur.jpeg', 'grandeur')"></div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="color-item"
-                                    style="background-image: url('../img/amarillo.png');background-size: cover; width: 8rem; height: 8rem;"
-                                    onclick="seleccionarImagen(this, '../img/amarillo.jpeg', 'amarillo')">
-                                </div>
-                            </div>
 
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="color-item"
-                                    style="background-image: url('../img/monstera.png');background-size: cover; width: 8rem; height: 8rem;"
-                                    onclick="seleccionarImagen(this, '../img/monstera.jpeg', 'monstera')">
+                            </div>
+                            <div class="col-md-3">
+                                <div class="color-item" style="background-image: url('../img/fibra.jpg'); "
+                                    onclick="seleccionarMaterial(this, 'fibra')">
+                                    <h1 class="titulo">Fibra</h1>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="color-item"
-                                    style="background-image: url('../img/palma.png');background-size: cover; width: 8rem; height: 8rem;"
-                                    onclick="seleccionarImagen(this, '../img/palma.jpeg', 'palma')">
+                            <div class="col-md-3">
+                                <div class="color-item" style="background-image: url('../img/Lino.png'); "
+                                    onclick="seleccionarMaterial(this, 'Lino')">
+                                    <h1 class="titulo">Lino</h1>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="color-item"
-                                    style="background-image: url('../img/pantheon.png');background-size: cover; width: 8rem; height: 8rem;"
-                                    onclick="seleccionarImagen(this, '../img/pantheon.jpeg', 'pantheon')"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="color-item"
-                                    style="background-image: url('../img/Img1.png');background-size: cover; width: 8rem; height: 8rem;"
-                                    onclick="seleccionarImagen(this, '../img/Img1.jpeg', 'Descripción 1')">
+                            <div class="col-md-3">
+                                <div class="color-item" style="background-image: url('../img/YESO1.png');"
+                                    onclick="seleccionarMaterial(this, 'YESO1')">
+                                    <h1 class="titulo">Yeso</h1>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="color-item"
-                                    style="background-image: url('../img/manoir.png');background-size: cover; width: 8rem; height: 8rem;"
-                                    onclick="seleccionarImagen(this, '../img/manoir.jpeg', 'manoir')">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="color-item"
-                                    style="background-image: url('../img/acustico2.png');background-size: cover; width: 8rem; height: 8rem;"
-                                    onclick="seleccionarImagen(this, '../img/acustico2.jpeg', 'acustico2')">
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-6">
-                    <h3>Estampado seleccionado</h3>
-                    <div class="card" style="border: none;">
-                        <div id="lienzo" style="background-size: 100% 100%; width: 400px; height: 300px;border-radius: 20px;"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Blanco</h5>
-                            <p class="card-text">Este es el color que has seleccionado.</p>
-                        </div>
-                    </div>
-                    <a href="adicionales.html" class="btn btn-dark mt-3">
+            </div>
+            <div class="row">
+                <div class="col-md text-center">
+                    <a href="finalizar.html" class="btn btn-dark mt-3">
                         <i class="bi bi-chevron-right"></i>
                         Siguiente
                     </a>
                 </div>
-                
-
 
             </div>
+
+
         </div>
     </section>
-
-
-
     <!-- star footer section -->
     <section class="p-5 bg-light text-dark">
         <footer id="contact" class="page-footer  text-md-left">
@@ -192,7 +158,6 @@
             </div>
         </footer>
     </section>
-
     <!-- start footer bottom -->
     <footer class="p-3 bg-dark text-white text-center position-relative">
         <div class="container">
@@ -206,11 +171,22 @@
 
     </footer>
 
+    <script>
+        var materialSeleccionado = null; // Variable global para almacenar el material seleccionado
 
-    <script src="../js/estampados.js">
+        function seleccionarMaterial(elemento) {
+            // Desmarcar el material anteriormente seleccionado
+            if (materialSeleccionado !== null) {
+                materialSeleccionado.classList.remove('selected');
+            }
 
-
+            // Marcar el nuevo material seleccionado
+            elemento.classList.add('selected');
+            materialSeleccionado = elemento;
+        }
     </script>
+
+
 
 
 </body>

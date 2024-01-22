@@ -1,0 +1,31 @@
+
+.color-item {
+    width: 100%;
+    height: 20em;
+    border-radius: 10%;
+    margin: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.color-item.selected {
+    border: 5px solid #1c1c1c;
+    /* Color del borde de selección */
+}
+
+.color-item:hover {
+    transform: scale(1.1);
+}
+.titulo {
+
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    margin: 0; /* Elimina el margen predeterminado del h1 */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para hacer el texto más legible */
+}
