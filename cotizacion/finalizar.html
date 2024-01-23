@@ -68,27 +68,28 @@
                             <form id="miFormulario">
                                 <label for="medidas">Medidas:</label>
                                 <input class="form-control" type="text" id="medidas" name="medidas" required>
-    
+
                                 <label for="coloresEstampados">Colores y Estampados:</label>
-                                
-                                <input class="form-control" type="text" id="coloresEstampados" name="coloresEstampados" required>
-    
+
+                                <input class="form-control" type="text" id="coloresEstampados" name="coloresEstampados"
+                                    required>
+
                                 <label for="adicionales">Adicionales:</label>
                                 <input class="form-control" type="text" id="adicionales" name="adicionales" required>
-    
+
                                 <label for="precioPanel">Precio total del Panel:</label>
                                 <input class="form-control" type="text" id="precioPanel" name="precioPanel" required>
-    
+
                                 <label for="instalacion">Servicio de Instalación:</label>
                                 <select class="form-control" id="instalacion" name="instalacion">
                                     <option value="">--seleccionar--</option>
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
                                 </select>
-    
+
                                 <label for="precioTotal">Precio total:</label>
                                 <input class="form-control" type="text" id="precioTotal" name="precioTotal" required>
-    
+
                                 <a href="#" class="btn btn-dark mt-3">
                                     <i class="bi bi-chevron-right"></i>
                                     Enviar
@@ -101,23 +102,44 @@
             </div>
         </div>
     </section>
-    
+
     <script>
-        // Recuperar los datos de medidas del almacenamiento local
-        var medidasGuardadas = localStorage.getItem('medidas');
-    
-        // Verificar si hay datos guardados
-        if (medidasGuardadas) {
-            // Parsear los datos de formato JSON
-            var medidas = JSON.parse(medidasGuardadas);
-    
-            // Crear una cadena de medidas combinadas
-            var medidasCombinadas = `Largo : ${medidas.largo} || Ancho : ${medidas.ancho} || Grosor : ${medidas.grosor} || Altura : ${medidas.altura}`;
-    
-            // Mostrar las medidas en el campo "Medidas" del formulario
-            document.getElementById('medidas').value = medidasCombinadas;
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            // Recuperar los datos de medidas del almacenamiento local
+            var medidasGuardadas = localStorage.getItem('medidas');
+
+            // Verificar si hay datos guardados
+            if (medidasGuardadas) {
+                try {
+                    // Parsear los datos de formato JSON
+                    var medidas = JSON.parse(medidasGuardadas);
+
+                    // Crear una cadena de medidas combinadas
+                    var medidasCombinadas = `Largo: ${medidas.largo} || Ancho: ${medidas.ancho} || Grosor: ${medidas.grosor} || Altura: ${medidas.altura}`;
+
+                    // Mostrar las medidas en el campo "Medidas" del formulario
+                    var medidasInput = document.getElementById('medidas');
+                    if (medidasInput) {
+                        medidasInput.value = medidasCombinadas;
+                    }
+                } catch (error) {
+                    console.error('Error al parsear las medidas:', error);
+                }
+            }
+
+            // Obtener el color seleccionado
+            var colorSeleccionado = localStorage.getItem('colorSeleccionado');
+
+      
+            // Mostrar el color seleccionado en el campo "Colores Estampados"
+            var coloresEstampadosInput = document.getElementById('coloresEstampados');
+            if (coloresEstampadosInput) {
+                coloresEstampadosInput.value = colorSeleccionado || 'N/A'; // Si no hay color seleccionado, mostrar 'N/A'
+            }
+        });
+
     </script>
+
 
     <!-- star footer section -->
     <section class="p-5 bg-light text-dark">

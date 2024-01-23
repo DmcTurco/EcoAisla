@@ -22,8 +22,11 @@ function seleccionarColor(elemento, color, nombreColor) {
     // Actualizar el texto del párrafo
     document.querySelector('.card-text').innerHTML = `Este es el color que has seleccionado: ${nombreColor}`;
 
-    // Guardar el color seleccionado en el almacenamiento local
-    localStorage.setItem('colorSeleccionado', color);
+    // Guardar el color seleccionado en localStorage
+    localStorage.setItem('colorSeleccionado', JSON.stringify({
+        color: color,
+        nombreColor: nombreColor
+    }));
 }
 
 // Crear los bloques en el lienzo
@@ -35,23 +38,25 @@ for (var i = 0; i < 6; i++) {
 }
 
 function validarSeleccion() {
-    console.log('llegue aqui');
 
-    // Verificar si se ha seleccionado un color
     var colorSeleccionado = localStorage.getItem('colorSeleccionado');
 
-    console.log('Llegué aquí. Color seleccionado: ' + colorSeleccionado);
-
-    return false;
     if (colorSeleccionado === null) {
         alert('Debes seleccionar un color antes de continuar.');
-        return false; // Detener el envío del formulario
+        return false;
     }
+    return true;
 
-    // Capturar el evento de envío del formulario y llamar a la función validarSeleccion
-    document.getElementById('miFormulario').addEventListener('submit', validarSeleccion);
+}
 
-    // Aquí puedes realizar cualquier otra validación necesaria
-
-    return true; // Permitir el envío del formulario
+var miFormulario = document.getElementById('FormColor');
+if (miFormulario) {
+    miFormulario.addEventListener('submit', function (event) {
+        if (!validarSeleccion()) {
+            event.preventDefault();
+            return;
+        }
+    });
+} else {
+    console.error('Elemento con ID "FormColor" no encontrado.');
 }
