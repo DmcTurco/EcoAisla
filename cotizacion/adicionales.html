@@ -78,26 +78,26 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="color-item" style="background-image: url('../img/Cañamo.png'); "
-                                    onclick="seleccionarMaterial(this, 'Cañamo')">
+                                    onclick="seleccionarMaterial(this, 'Cañamo','../img/Cañamo.png')">
                                     <h1 class="titulo">Cañamo</h1>
                                 </div>
 
                             </div>
                             <div class="col-md-3">
                                 <div class="color-item" style="background-image: url('../img/fibra.jpg'); "
-                                    onclick="seleccionarMaterial(this, 'fibra')">
+                                    onclick="seleccionarMaterial(this, 'fibra','../img/fibra.jpg')">
                                     <h1 class="titulo">Fibra</h1>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="color-item" style="background-image: url('../img/Lino.png'); "
-                                    onclick="seleccionarMaterial(this, 'Lino')">
+                                    onclick="seleccionarMaterial(this, 'Lino','../img/Lino.png')">
                                     <h1 class="titulo">Lino</h1>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="color-item" style="background-image: url('../img/YESO1.png');"
-                                    onclick="seleccionarMaterial(this, 'YESO1')">
+                                    onclick="seleccionarMaterial(this, 'YESO1','../img/YESO1.png')">
                                     <h1 class="titulo">Yeso</h1>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@
     <script>
         var materialSeleccionado = null; // Variable global para almacenar el material seleccionado
 
-        function seleccionarMaterial(elemento) {
+        function seleccionarMaterial(elemento,nombreMaterial,urlAdicional) {
             // Desmarcar el material anteriormente seleccionado
             if (materialSeleccionado !== null) {
                 materialSeleccionado.classList.remove('selected');
@@ -183,6 +183,14 @@
             // Marcar el nuevo material seleccionado
             elemento.classList.add('selected');
             materialSeleccionado = elemento;
+
+            // Guardar la información del material seleccionado en el almacenamiento local
+            localStorage.setItem('materialSeleccionado', JSON.stringify({
+                nombreMaterial: nombreMaterial,
+                urlAdicional: urlAdicional
+            }));
+
+
         }
     </script>
 

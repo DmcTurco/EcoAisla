@@ -66,13 +66,35 @@
                     <div class="container">
                         <div class="row">
                             <form id="miFormulario">
-                                <label for="medidas">Medidas:</label>
+                                <label for="medidas"><strong>Medidas:</strong></label>
                                 <input class="form-control" type="text" id="medidas" name="medidas" required>
+                                <br>
+                                <div class="row">
+                                    <label for=""><strong>Colores - Estampados - Adicional:</strong></label>
 
-                                <label for="coloresEstampados">Colores y Estampados:</label>
+                                    <div class="col-md-4">
+                                        <div id="colorContainer"
+                                            style="width: 60px; height: 60px; border-radius: 50%; margin-top: 10px;">
+                                        </div>
+                                        <span id="spanColoresEstampados"></span>
+                                    </div>
 
-                                <input class="form-control" type="text" id="coloresEstampados" name="coloresEstampados"
-                                    required>
+                                    <div class="col-md-4">
+                                        <div id="estapandoContainer"
+                                            style="background-size: cover; width: 60px; height: 60px; border-radius: 50%;margin-top: 10px;">
+                                        </div>
+                                        <span id="spanEstampados"></span>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div id="adicionalContainer"
+                                            style="background-size: cover; width: 60px; height: 60px; border-radius: 50%;margin-top: 10px;">
+                                        </div>
+                                        <span id="spanAdicional"></span>
+                                    </div>
+                                </div>
+                                <br>
+
 
                                 <label for="adicionales">Adicionales:</label>
                                 <input class="form-control" type="text" id="adicionales" name="adicionales" required>
@@ -105,18 +127,16 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+
             // Recuperar los datos de medidas del almacenamiento local
             var medidasGuardadas = localStorage.getItem('medidas');
-
             // Verificar si hay datos guardados
             if (medidasGuardadas) {
                 try {
                     // Parsear los datos de formato JSON
                     var medidas = JSON.parse(medidasGuardadas);
-
                     // Crear una cadena de medidas combinadas
                     var medidasCombinadas = `Largo: ${medidas.largo} || Ancho: ${medidas.ancho} || Grosor: ${medidas.grosor} || Altura: ${medidas.altura}`;
-
                     // Mostrar las medidas en el campo "Medidas" del formulario
                     var medidasInput = document.getElementById('medidas');
                     if (medidasInput) {
@@ -127,15 +147,72 @@
                 }
             }
 
-            // Obtener el color seleccionado
-            var colorSeleccionado = localStorage.getItem('colorSeleccionado');
 
-      
-            // Mostrar el color seleccionado en el campo "Colores Estampados"
-            var coloresEstampadosInput = document.getElementById('coloresEstampados');
-            if (coloresEstampadosInput) {
-                coloresEstampadosInput.value = colorSeleccionado || 'N/A'; // Si no hay color seleccionado, mostrar 'N/A'
+            // Recuperar el color seleccionado de localStorage
+            var colorSeleccionadoJSON = localStorage.getItem('colorSeleccionado');
+            // Parsear el JSON
+            var colorSeleccionadoObj = JSON.parse(colorSeleccionadoJSON);
+            // Obtener las propiedades del objeto
+            var color = colorSeleccionadoObj.color;
+            var nombreColor = colorSeleccionadoObj.nombreColor;
+            // Mostrar el color y nombre del color en el círculo y en el input
+            var colorContainer = document.getElementById('colorContainer');
+            var spanColoresEstampados = document.getElementById('spanColoresEstampados');
+            if (colorContainer && spanColoresEstampados) {
+                // Mostrar el color en el círculo
+                colorContainer.style.backgroundColor = color || 'transparent'; // Si no hay color seleccionado, dejar transparente
+                // Mostrar el nombre del color en el input
+                spanColoresEstampados.innerText = nombreColor;
             }
+
+
+            var imagenSeleccionadaJSON = localStorage.getItem('imagenSeleccionada');
+            if (imagenSeleccionadaJSON) {
+                try {
+                    var imagenSeleccionadaObj = JSON.parse(imagenSeleccionadaJSON);
+                    var estapandoContainer = document.getElementById('estapandoContainer');
+                    if (estapandoContainer && imagenSeleccionadaObj) {
+                        // Mostrar la imagen dentro del círculo
+                        estapandoContainer.style.backgroundImage = `url('${imagenSeleccionadaObj.urlEstampado}')`;
+                        estapandoContainer.style.backgroundColor = 'transparent';
+                    }
+
+                    var spanEstampados = document.getElementById('spanEstampados');
+   
+                    if (spanEstampados) {
+                        // Mostrar la descripción en el span
+                        spanEstampados.innerText = imagenSeleccionadaObj.descripcion || 'N/A';
+                    }
+                } catch (error) {
+                    console.error('Error al parsear la información de la imagen:', error);
+                }
+            }
+
+
+            var materialSeleccionadoJSON = localStorage.getItem('materialSeleccionado');
+            if (materialSeleccionadoJSON) {
+                try {
+                    console.log(materialSeleccionadoJSON);
+                    var materialSeleccionadoObj = JSON.parse(materialSeleccionadoJSON);
+                    var adicionalContainer = document.getElementById('adicionalContainer');
+                    var spanAdicional = document.getElementById('spanAdicional');
+                    if (adicionalContainer && materialSeleccionadoObj) {
+                        adicionalContainer.style.backgroundImage = `url('${materialSeleccionadoObj.urlAdicional}')`;
+                    }
+
+                    if (spanAdicional) {
+                        spanAdicional.innerText = materialSeleccionadoObj.nombreMaterial || 'N/A';
+                    }
+
+
+                } catch (error) {
+                    console.error('Error al parsear la información del material:', error);
+                }
+            }
+
+
+
+
         });
 
     </script>

@@ -1,6 +1,13 @@
 var elementoSeleccionado = null; // Variable global para almacenar el elemento seleccionado
 
-function seleccionarImagen(elemento, urlImagen, descripcion) {
+function seleccionarImagen(elemento, urlImagen, urlEstampado, descripcion) {
+
+    // Guardar la información de la imagen seleccionada en el almacenamiento local
+    localStorage.setItem('imagenSeleccionada', JSON.stringify({
+        urlEstampado: urlEstampado,
+        descripcion: descripcion
+    }));
+
     // Desmarcar el elemento anteriormente seleccionado
     if (elementoSeleccionado !== null) {
         elementoSeleccionado.classList.remove('selected');
@@ -20,6 +27,6 @@ function seleccionarImagen(elemento, urlImagen, descripcion) {
     // Actualizar el texto del párrafo
     document.querySelector('.card-text').innerText = `Esta es la imagen que has seleccionado: ${descripcion}`;
 
-    // Guardar la URL de la imagen seleccionada en el almacenamiento local
-    localStorage.setItem('imagenSeleccionada', urlImagen);
+
+
 }
