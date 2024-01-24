@@ -69,7 +69,7 @@
                                 <label for="medidas"><strong>Medidas:</strong></label>
                                 <input class="form-control" type="text" id="medidas" name="medidas" required>
                                 <br>
-                                <div class="row">
+                                <div class="row py-2">
                                     <label for=""><strong>Colores - Estampados - Adicional:</strong></label>
 
                                     <div class="col-md-4">
@@ -95,22 +95,32 @@
                                 </div>
                                 <br>
 
+                                <div class="row py-2">
+                                    <div class="col-md">
+                                        <label for="precioPanel"><strong>Precio total del Panel:</strong></label>
+                                        <span id="spanPrecioPanel" class="form-control"></span>
+                                    </div>
+                                </div>
 
-                                <label for="adicionales">Adicionales:</label>
-                                <input class="form-control" type="text" id="adicionales" name="adicionales" required>
 
-                                <label for="precioPanel">Precio total del Panel:</label>
-                                <input class="form-control" type="text" id="precioPanel" name="precioPanel" required>
+                                <div class="row py-2">
+                                    <div class="col-md">
+                                        <label for="instalacion"><strong>Servicio de Instalación:</strong></label>
+                                        <select class="form-control" id="instalacion" name="instalacion">
+                                            <option value="">--seleccionar--</option>
+                                            <option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                                <label for="instalacion">Servicio de Instalación:</label>
-                                <select class="form-control" id="instalacion" name="instalacion">
-                                    <option value="">--seleccionar--</option>
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-
-                                <label for="precioTotal">Precio total:</label>
-                                <input class="form-control" type="text" id="precioTotal" name="precioTotal" required>
+                                <div class="row py-2">
+                                    <div class="col-md">
+                                        <label for="precioTotal"><strong>Precio total:</strong></label>
+                                        <span class="form-control" id="spanPrecioTotal">s /. 0.00</span>
+                                        <!-- <input class="form-control" type="text" id="precioTotal" name="precioTotal" required> -->
+                                    </div>
+                                </div>
 
                                 <a href="#" class="btn btn-dark mt-3">
                                     <i class="bi bi-chevron-right"></i>
@@ -126,15 +136,31 @@
     </section>
 
     <script>
+
+        // Función para calcular el área
+        function calcularArea(largo, ancho) {
+            return largo * ancho;
+        }
+
+        // Función para calcular el precio
+        function calcularPrecio(area, precioPorUnidad) {
+            return area * precioPorUnidad;
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
 
             // Recuperar los datos de medidas del almacenamiento local
             var medidasGuardadas = localStorage.getItem('medidas');
+            var spanPrecioPanel = document.getElementById('spanPrecioPanel');
             // Verificar si hay datos guardados
             if (medidasGuardadas) {
                 try {
                     // Parsear los datos de formato JSON
                     var medidas = JSON.parse(medidasGuardadas);
+
+                    // Obtener el área y el precio usando las funciones
+                    var area = calcularArea(medidas.largo, medidas.ancho);
+                    var precio = calcularPrecio(area, 250);
                     // Crear una cadena de medidas combinadas
                     var medidasCombinadas = `Largo: ${medidas.largo} || Ancho: ${medidas.ancho} || Grosor: ${medidas.grosor} || Altura: ${medidas.altura}`;
                     // Mostrar las medidas en el campo "Medidas" del formulario
@@ -142,9 +168,37 @@
                     if (medidasInput) {
                         medidasInput.value = medidasCombinadas;
                     }
+                    // Mostrar el precio en el elemento span
+                    if (spanPrecioPanel) {
+                        spanPrecioPanel.innerText = `S/ ${precio.toFixed(2)}`; // Ajustar el formato según necesites
+                    }
+
+
                 } catch (error) {
                     console.error('Error al parsear las medidas:', error);
                 }
+            }
+
+            // Obtener referencia al elemento select
+            var selectInstalacion = document.getElementById('instalacion');
+            var spanPrecioTotal = document.getElementById('spanPrecioTotal');
+            if (selectInstalacion) {
+                selectInstalacion.addEventListener('change', function () {
+                    // Obtener el valor seleccionado
+                    var seleccion = selectInstalacion.value;
+                    // Obtener el área y el precio usando las funciones
+                    var area = calcularArea(medidas.largo, medidas.ancho);
+                    var precio = calcularPrecio(area, 250);
+                    // Definir el costo adicional por instalación
+                    var costoInstalacion = 100;
+                    // Calcular el precio total
+                    var precioTotal = (seleccion === 'Si') ? precio + costoInstalacion : precio;
+                    // Mostrar el precio total en el span
+                    if (spanPrecioTotal) {
+                        spanPrecioTotal.innerText = `S/ ${precioTotal.toFixed(2)}`;
+                    }
+                });
+
             }
 
 
@@ -178,7 +232,7 @@
                     }
 
                     var spanEstampados = document.getElementById('spanEstampados');
-   
+
                     if (spanEstampados) {
                         // Mostrar la descripción en el span
                         spanEstampados.innerText = imagenSeleccionadaObj.descripcion || 'N/A';
@@ -192,7 +246,6 @@
             var materialSeleccionadoJSON = localStorage.getItem('materialSeleccionado');
             if (materialSeleccionadoJSON) {
                 try {
-                    console.log(materialSeleccionadoJSON);
                     var materialSeleccionadoObj = JSON.parse(materialSeleccionadoJSON);
                     var adicionalContainer = document.getElementById('adicionalContainer');
                     var spanAdicional = document.getElementById('spanAdicional');
@@ -203,7 +256,6 @@
                     if (spanAdicional) {
                         spanAdicional.innerText = materialSeleccionadoObj.nombreMaterial || 'N/A';
                     }
-
 
                 } catch (error) {
                     console.error('Error al parsear la información del material:', error);
